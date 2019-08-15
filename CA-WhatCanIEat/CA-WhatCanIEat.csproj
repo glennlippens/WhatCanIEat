@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\Productdbsave.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="src\app\components\ingredienten\ingredient.service.ts" />
+    <None Remove="src\app\services\auth.service.ts" />
+    <None Remove="src\models\ingredient.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="Views\Shared\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="1.22.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="1.1.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="1.1.2" />
+
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\components\ingredienten\ingredient.service.ts" />
+    <TypeScriptCompile Include="src\app\services\auth.service.ts" />
+    <TypeScriptCompile Include="src\models\ingredient.model.ts" />
+  </ItemGroup>
+
+</Project>

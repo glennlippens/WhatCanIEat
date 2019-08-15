@@ -1,0 +1,87 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Naam</th>
+      <th>Maxzwanger</th>
+      <th>MaxDiabeet</th>
+      <th>Value</th>
+      <th>Zwanger</th>
+      <th>Diabeet</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let ingredient of ingredient;">
+      <tr class="borderless">
+        <td class="borderless">
+          <input type="text" #naam [(ngModel)]="ingredient.naam" name="naam" class="form-control text-input" id="naam" />
+        </td>
+        <td class="borderless">
+          <input type="text" #maxzwanger [(ngModel)]="ingredient.maxZwanger" name="maxZwanger" class="form-control text-input" id="maxZwanger" />
+        </td>
+        <td class="borderless">
+          <input type="text" #maxdiabeet [(ngModel)]="ingredient.maxDiabeet" name="maxDiabeet" class="form-control text-input" id="maxDiabeet" />
+        </td>
+        <td class="borderless">
+          <input type="text" #value [(ngModel)]="ingredient.value" name="value" class="form-control text-input" id="value" />
+        </td>
+        <td class="borderless">
+          <input type="checkbox" #zwanger [(ngModel)]="ingredient.zwanger" class="form-control text-input" />
+        </td>
+        <td class="borderless">
+          <input type="checkbox" #diabeet [(ngModel)]="ingredient.diabeet" class="form-control text-input" />
+        </td>
+        <td class="borderless"><button name="ID" (click)="senddata( naam.value, maxzwanger.value, maxdiabeet.value,value.value,ingredient.ingredientID, zwanger.checked,diabeet.checked )" type="submit" class="btn btn-primary" id="ID">Edit</button></td>
+        <td class="borderless"><button type="submit" class="btn btn-primary" (click)="deleteing(ingredient.ingredientID)" name="delete">Delete</button></td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>
+
+<button (click)="addbutn()" class="btn btn-outline-dark" id="bordered_button_add">voeg ingredient toe</button>
+
+<div *ngIf="addbtn" id="INeedSomeSpace">
+  <table class="table">
+    <thead>
+      <tr class="borderless">
+        <th>Naam</th>
+        <th>Maxzwanger</th>
+        <th>MaxDiabeet</th>
+        <th>Value</th>
+        <th>Zwanger</th>
+        <th>Diabeet</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="borderless">
+        <td class="borderless">
+          <input type="text" #naam name="naam" class="form-control text-input" id="naam" />
+        </td>
+        <td class="borderless">
+          <input type="text" #maxzwanger name="maxZwanger" class="form-control text-input" id="maxZwanger" />
+        </td>
+        <td class="borderless">
+          <input type="text" #maxdiabeet name="maxdiabeet" class="form-control text-input" id="maxDiabeet" />
+        </td>
+        <td class="borderless">
+          <input type="text" #value name="value" class="form-control text-input" id="value" />
+        </td>
+        <td class="borderless">
+          <input type="checkbox" #zwanger name="zwanger" class="form-control text-input" id="zwanger" />
+        </td>
+        <td class="borderless">
+          <input type="checkbox" #diabeet name="diabeet" class="form-control text-input" id="diabeet" />
+        </td>
+        <td class="borderless"><button (click)="addingredientbutton( naam.value, maxzwanger.value, maxdiabeet.value,value.value,ingredient.ingredientID, zwanger.checked,diabeet.checked )" type="submit" class="btn btn-success form-control">add</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+

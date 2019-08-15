@@ -1,0 +1,30 @@
+.table {
+  border: 2px solid gray;
+  border-collapse: separate;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+}
+
+.borderless {
+  border: none !important;
+}
+
+#bordered_button_add {
+  border: 1px solid;
+  color: forestgreen;
+  max-width: 200px;
+  background-color: white;
+}
+
+.email_field {
+  min-width: 225px;
+  width: 250px;
+}
+
+.dietistID_field {
+  width: 40px;
+}
+
+#INeedSomeSpace {
+  margin-top: 20px;
+}

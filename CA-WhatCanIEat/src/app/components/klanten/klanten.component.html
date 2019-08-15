@@ -1,0 +1,130 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>voornaam</th>
+      <th>achternaam</th>
+      <th>email</th>
+      <th>gsmnr</th>
+      <th>Doelgroep</th>
+      <th>DietistID</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <ng-container *ngFor="let klant of klant;">
+      <tr class="borderless">
+        <td class="borderless">
+          <input type="text" #voornaam [(ngModel)]="klant.voorNaam" name="voornaam" class="form-control text-input" id="voorNaam" />
+        </td>
+        <td class="borderless">
+          <input type="text" #achternaam [(ngModel)]="klant.achterNaam" name="achternaam" class="form-control text-input" id="achterNaam" />
+        </td>
+        <td  class="borderless email_field">
+          <input type="text" #email [(ngModel)]="klant.email" name="email" class="form-control text-input" id="email" />
+        </td>
+        <td class="borderless">
+          <input type="text" #gsm [(ngModel)]="klant.gsm" name="gsm" class="form-control text-input" id="gsm" />
+        </td>
+        <td class="borderless">
+          <input type="text" #Doelgroep [(ngModel)]="klant.doelgroep" name="Doelgroep" class="form-control text-input" id="Doelgroep" />
+        </td>
+        <td class="borderless dietistID_field">
+          <input type="text" #DietisID [(ngModel)]="klant.dietisID" name="DietisID" class="form-control text-input" id="DietisID" />
+        </td>
+        <td class="borderless"><button name="ID" (click)="getuser( voornaam.value, achternaam.value, email.value, gsm.value,  klant.costumerId, Doelgroep.value, DietisID.value )" type="submit" class="btn btn-primary" id="ID">Edit</button></td>
+        <td class="borderless"><button type="submit" class="btn btn-primary" (click)="deleteuser(klant.costumerId)" name="delete">Delete</button></td>
+      </tr>
+    </ng-container>
+    <tr *ngIf="!klant">
+      <td colspan="5">
+        Loading data. Please wait...
+      </td>
+    </tr>
+    <tr *ngIf="klant && klant.length==0">
+      <td colspan="5">
+        No klant records to display
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button class="btn btn-outline-dark" id="bordered_button_mail" (click)="mailplains()">stuur mail </button>
+<button class="btn btn-outline-dark" id="bordered_button_add" (click)="addbutn()">voeg klant toe</button>
+<br>
+
+<div *ngIf="addbtn" id="INeedSomeSpace">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>voornaam</th>
+        <th>achternaam</th>
+        <th>email</th>
+        <th>gsmnr</th>
+        <th>Doelgroep</th>
+        <th>DietistID</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="borderless">
+        <td class="borderless">
+          <input type="text" #voornaam name="voornaam" class="form-control text-input" id="voorNaam" />
+        </td>
+        <td class="borderless">
+          <input type="text" #achternaam name="achternaam" class="form-control text-input" id="achterNaam" />
+        </td>
+        <td class="borderless email_field">
+          <input type="text" #email name="email" class="form-control text-input" id="email" />
+        </td>
+        <td class="borderless">
+          <input type="text" #gsm name="gsm" class="form-control text-input" id="gsm" />
+        </td>
+        <td class="borderless">
+          <input type="text" #Doelgroep name="Doelgroep" class="form-control text-input" id="Doelgroep" />
+        </td>
+        <td class="borderless dietistID_field">
+          <input type="text" #DietisID name="DietisID" class="form-control text-input" id="DietisID" />
+        </td>
+        <td class="borderless"><button type="submit" class="btn btn-primary" (click)="adduser(voornaam.value, achternaam.value, email.value, gsm.value,   Doelgroep.value, DietisID.value )" name="add">add</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div *ngIf="mailvis" class="row" id="INeedLittleSpace">
+  <div class="container">
+    <form #f="ngForm" (ngSubmit)="sendMail(contact)">
+      <div>
+        <div class="form-group required">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="contact.Name" name="contact.Name" class="form-control text-input" id="name" placeholder="Name" />
+        </div>
+        <div class="form-group required">
+          <label for="email">E-mail</label>
+          <input type="email" [(ngModel)]="contact.Email" name="contact.Email" class="form-control text-input" id="email" placeholder="E-mail" />
+        </div>
+      </div>
+      <div>
+        <div class="form-group required">
+          <label for="subject">Onderwerp</label>
+          <input type="text" [(ngModel)]="contact.Subject" name="contact.Subject" class="form-control text-input" id="subject" placeholder="Onderwerp" />
+        </div>
+      </div>
+      <div>
+        <div class="form-group required">
+          <label for="message">Message</label>
+          <textarea type="text" [(ngModel)]="contact.Message" name="contact.Message" class="form-control" id="message" placeholder="Message..."></textarea>
+        </div>
+      </div>
+      <div>
+        <div>
+          <button type="submit" class="btn btn-success">Send</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+
+<h3>ingredienten</h3>
+<div class="row">
+  <div class="col-sm-7"><input (keyup.enter)="getIngredient()" id="inputIgn" class="form-control" type="text"></div>
+  <div class="col-sm-2"><button (click)="getIngredient()" class="btn btn-default form-control">zoek ingredient</button></div>
+  <div class="col-sm-3"><button (click)="getVervangIngredient()" class="btn btn-default form-control">zoek vervang ingredient</button></div>
+</div>
+<br />
+<div style="display:none" class="panel panel-success" id="ingredient_panel">
+  <div class="panel-heading"><strong class="text-success">Ingredient</strong></div>
+  <div class="container panel-body">
+    <p>Naam: {{mainIng.Naam}}</p>
+    <p>Beschrijving: {{mainIng.Value}}</p>
+    <p>is dit verboden te eten voor mij?: </p><input type="checkbox" disabled="disabled" [(ngModel)]="mainIng.Doelgroep" />
+    <p>Max: {{mainIng.Max}}</p>
+  </div>
+</div>
+<div style="display:none" class="panel panel-warning" id="vervangIngredient_panel">
+  <div class="panel-heading"><strong class="text-warning">Vervang ingredient</strong></div>
+  <div class="container panel-body">
+    <p>Naam: {{subIng.Naam}}</p>
+    <p>Beschrijving: {{subIng.Value}}</p>
+    <p>is dit verboden te eten voor mij?: </p><input type="checkbox" disabled="disabled" [(ngModel)]="subIng.Doelgroep" />
+    <p>Max: {{subIng.Max}}</p>
+  </div>
+</div>

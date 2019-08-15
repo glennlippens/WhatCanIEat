@@ -1,0 +1,144 @@
+
+<div class="row">
+  <div class="col-sm-9">
+    <input (keyup.enter)="searchRecipe()" id="search" type="text" class="form-control" value="">
+  </div>
+  <div class="col-sm-3">
+    <button (click)="searchRecipe()" (keyup.enter)="searchRecipe()" class="btn btn-default form-control">search</button>
+  </div>
+</div>
+<br />
+
+<div style="display:none" id="pregnant_approved" class="panel panel-success">
+  <div class="panel-footer">
+    <strong class="text-success">approved recipe</strong>
+  </div>
+  <div class="container panel-body">
+    <div class="col-sm-9"><p>This recipe is allowed while pregnant</p></div>
+  </div>
+</div>
+
+<div style="display:none" id="pregnant_avoid" class="panel panel-warning">
+  <div class="panel-heading">
+    <strong class="text-warning">avoid recipe</strong>
+  </div>
+  <div class="container panel-body">
+    <p>This recipe is best to avoid when pregnant, but allowed in some specific types or low amounts</p>
+  </div>
+</div>
+
+<div style="display:none" id="pregnant_warning" class="panel panel-danger">
+  <div class="panel-heading">
+    <strong class="text-danger">forbidden recipe</strong>
+  </div>
+  <div class="container panel-body">
+    <p>This recipe is not safe to eat when pregnant!</p>
+  </div>
+</div>
+
+<div style="display:none" id="recipelist_edaman" class="panel panel-warning">
+  <div class="container panel-body">
+    <br>
+    <p>Name: {{name_edaman}}</p>
+    <p>healthLables: {{healthLables_edaman}}</p>
+    <p>ingredients: {{ingredients_edaman}}</p><br>
+    <img [src]="img_edaman" class="img-rounded" width="200" /><br>
+  </div>
+  <div class="panel-footer">
+    <strong class="text-warning"> powered by edaman API: https://www.edamam.com/, content is not verified by the dietist. </strong>
+  </div>
+</div>
+
+<div style="display:none" id="loading">
+  <div>
+    <br>
+    <p>loading your recipe, please wait</p>
+    <img src="https://media.giphy.com/media/3o7bu8sRnYpTOG1p8k/giphy.gif" class="img-circle" width="200" height="200">
+  </div>
+</div>
+
+<tr *ngIf="!healthLables_edaman">
+  <td colspan="5">
+    gelieven recept in te geven
+  </td>
+</tr>
+
+<div style="display:none" id="recipelist_db" class="panel panel-success">
+  <div class="panel-body">
+    <div>
+      <p>Name: {{name_db}}</p>
+      <p>
+        healthLables: {{Alcohol_free}} {{Celery_free}} {{Crustacean_free}} {{Dairy_free}} {{Egg_free}}
+        {{Fish_free}} {{Gluten_free}} {{Kidney_friendly}} {{Kosher}} {{Low_potassium}} {{Lupine_free}}
+        {{Low_fat_abs}} {{Mustard_free}} {{No_oil_added}} {{Low_sugar}} {{Paleo}} {{Peanut_free}}
+        {{Pecatarian}} {{Pork_free}} {{Red_meat_free}} {{Sesame_free}} {{Shellfish_free}} {{Soy_free}}
+        {{Sugar_conscious}} {{Tree_nut_free}} {{Vegan}} {{Vegetarian}} {{Wheat_free}}
+      </p>
+      <img [src]="img_db" class="img-rounded" width="200" /><br>
+      <br>
+      <div style="display:block" id="ingredient_button"><button (click)="getIngredients()" id="show_ingredient_button" class="btn btn-outline-dark form-control">show ingredients</button></div>
+    </div>  
+    <div style="display:none" id="ingredient_list">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Naam</th>
+            <th>Value</th>
+            <th>Maxzwanger</th>
+            <th>MaxDiabeet</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let ingredient of ingredients_db;">
+            <tr class="borderless">
+              <td class="borderless">
+                <p>{{ingredient.naam}}</p>
+              </td>
+              <td class="borderless">
+                <p>{{ingredient.value}}</p>
+              </td>
+              <td class="borderless">
+                <p>{{ingredient.maxZwanger}}</p>
+              </td>
+              <td class="borderless">
+                <p>{{ingredient.maxDiabeet}}</p>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <strong class="text-success"> from the "what can i eat" database, content is verified </strong>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

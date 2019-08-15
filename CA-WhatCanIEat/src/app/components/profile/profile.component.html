@@ -1,0 +1,55 @@
+<div class="panel panel-info">
+  <div class="panel-heading"><strong>Pas informatie van je account aan</strong></div>
+  <div class="panel-body container">
+    <form #f="ngForm" (ngSubmit)="onSubmit(RegisterForm)">
+      <div>
+        <div class="form-group required">
+          <label for="Email">Email</label>
+          <div class="row">
+            <div class="col-sm-11"><input type="text" [(ngModel)]="RegisterForm.Email" name="RegisterForm.Email" class="form-control text-input" id="Email" placeholder="RegisterForm.Email" /></div>
+            <div class="col-sm-1"></div>
+          </div>       
+        </div>
+        <div class="form-group required">
+          <label for="VoorNaam">VoorNaam</label>
+          <div class="row">
+            <div class="col-sm-11"><input type="text" [(ngModel)]="RegisterForm.VoorNaam" name="RegisterForm.VoorNaam" class="form-control text-input" id="VoorNaam" placeholder="VoorNaam" /></div>
+            <div class="col-sm-1"></div>
+          </div>          
+        </div>
+        <div class="form-group required">
+          <label for="AchterNaam">AchterNaam</label>
+          <div class="row">
+            <div class="col-sm-11"><input type="text" [(ngModel)]="RegisterForm.AchterNaam" name="RegisterForm.AchterNaam" class="form-control text-input" id="AchterNaam" placeholder="AchterNaam" /></div>
+            <div class="col-sm-1"></div>
+          </div>         
+        </div>
+        <div class="form-group required">
+          <label for="Gsm">Gsm</label>
+          <div class="row">
+            <div class="col-sm-11"><input type="text" [(ngModel)]="RegisterForm.Gsm" name="RegisterForm.Gsm" class="form-control text-input" id="Gsm" placeholder="Gsm" /></div>
+            <div class="col-sm-1"></div>
+          </div>       
+        </div>
+        <div class="form-group required">
+          <label for="Doelgroep">Doelgroep</label>
+          <div class="row">
+            <div class="col-sm-11"><input type="text" [(ngModel)]="RegisterForm.Doelgroep" name="RegisterForm.Doelgroep" class="form-control text-input" id="Doelgroep" placeholder="Doelgroep" /></div>
+            <div class="col-sm-1"></div>
+          </div>        
+        </div>
+        <div class="form-group required">
+          <label for="DietisEmail">DietisEmail</label>
+          <div class="row">
+            <div class="col-sm-11"><input type="text" [(ngModel)]="RegisterForm.DietisEmail" name="RegisterForm.DietisEmail" class="form-control text-input" id="DietisEmail" placeholder="DietisEmail" /></div>
+            <div class="col-sm-1"></div>
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-info">Register</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<br>

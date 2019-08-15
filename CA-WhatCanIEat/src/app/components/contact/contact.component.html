@@ -1,0 +1,30 @@
+
+<div class="panel panel-info">
+  <div class="panel-heading"><strong>contact formulier</strong></div>
+  <div class="panel-body container">
+    <form #f="ngForm" (ngSubmit)="onSubmit(sendMail)">
+      <div>
+        <p>Achternaam: {{dietist.AchterNaam}}</p>
+        <p>Voornaam: {{dietist.VoorNaam}}</p>
+        <p>Email: {{dietist.Email}}</p>
+        <p>Gsm: {{dietist.Gsm}}</p>
+      </div>
+      <div class="row container"><label for="Subject">Subject</label></div>
+      <div class="row">
+        <div class="col-sm-11"><input type="text" [(ngModel)]="sendMail.Subject" name="sendMail.Subject" class="form-control text-input" id="Subject" placeholder="Subject" /></div>
+        <div class="col-sm-1"></div><br />
+      </div>
+      <div class="row container"><label for="Message">Message</label></div>
+      <div class="row">
+        <div class="col-sm-11"><input type="text" [(ngModel)]="sendMail.Message" name="sendMail.Message" class="form-control text-input" id="Message" placeholder="Message" /></div>
+        <div class="col-sm-1"></div><br />
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-sm-2"><button type="submit" class="btn btn-info">Send</button></div>
+      </div>
+    </form>
+  </div>    
+</div>
+
+

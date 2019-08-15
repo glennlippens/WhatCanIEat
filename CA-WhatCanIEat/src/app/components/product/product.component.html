@@ -1,0 +1,155 @@
+
+<table *ngIf="!visual" class="table">
+  <thead>
+    <tr>
+      <th>Naam</th>
+      <th colspan="3">imageurl</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let product of product;">
+      <tr class="borderless">
+        <td class="borderless">
+          <input type="text" #naam [(ngModel)]="product.name" name="naam" class="form-control text-input" id="naam" />
+        </td>
+        <td class="borderless" colspan="3">
+          <input type="text" #imgurl [(ngModel)]="product.imageUrl" name="imgurl" class="form-control text-input" id="imgurl" />
+        </td>
+      </tr>
+      <tr class="borderless">
+        <td class="borderless"><input type="checkbox" #Alcohol_free [(ngModel)]="product.alcohol_free" name="Alcohol_free" class=" text-input" id="Alcohol_free" /><label class="text-danger">Alcohol_free</label></td>
+        <td class="borderless"><input type="checkbox" #Celery_free [(ngModel)]="product.celery_free" name="Product.Celery_free" class="text-input" id="Product.Celery_free" /><label>Celery_free</label></td>
+        <td class="borderless"><input type="checkbox" #Crustacean_free [(ngModel)]="product.crustacean_free" name="Product.Crustacean_free" class="text-input" id="Product.Crustacean_free" /><label class="text-danger">Crustacean_free</label></td>
+        <td class="borderless"><input type="checkbox" #Dairy_free [(ngModel)]="product.dairy_free" name="Product.Dairy_free" class="text-input" id="Product.Dairy_free" /><label class="text-warning">Dairy_free</label></td>
+      </tr>
+      <tr class="borderless">
+        <td class="borderless"><input type="checkbox" #Egg_free [(ngModel)]="product.egg_free" name="Product.Egg_free" class="text-input" id="Product.Egg_free" /><label class="text-danger">Egg_free</label></td>
+        <td class="borderless"><input type="checkbox" #Fish_free [(ngModel)]="product.fish_free" name="Product.Fish_free" class="text-input" id="Product.Fish_free" /><label class="text-warning">Fish_free</label></td>
+        <td class="borderless"><input type="checkbox" #Gluten_free [(ngModel)]="product.gluten_free" name="Product.Gluten_free" class="text-input" id="Product.Gluten_free" /><label>Gluten_free</label></td>
+        <td class="borderless"><input type="checkbox" #Kidney_friendly [(ngModel)]="product.kidney_friendly" name="Product.Kidney_friendly" class="text-input" id="Product.Kidney_friendly" /><label>Kidney_friendly</label></td>
+      </tr>
+      <tr class="borderless">
+        <td class="borderless"><input type="checkbox" #Kosher [(ngModel)]="product.kosher" name="Product.Kosher" class="text-input" id="Product.Kosher" /><label>Kosher</label></td>
+        <td class="borderless"><input type="checkbox" #Low_potassium [(ngModel)]="product.low_potassium" name="Product.Low_potassium" class="text-input" id="Product.Low_potassium" /><label>Low_potassium</label></td>
+        <td class="borderless"><input type="checkbox" #Lupine_free [(ngModel)]="product.lupine_free" name="Product.Lupine_free" class="text-input" id="Product.Lupine_free" /><label>Lupine_free</label></td>
+        <td class="borderless"><input type="checkbox" #Low_fat_abs [(ngModel)]="product.low_fat_abs" name="Product.Low_fat_abs" class="text-input" id="Product.Low_fat_abs" /><label>Low_fat_abs</label></td>
+      </tr>
+      <tr  class="borderless">
+        <td class="borderless"><input type="checkbox" #Mustard_free [(ngModel)]="product.mustard_free" name="Product.Mustard_free" class="text-input" id="Product.Mustard_free" /><label>Mustard_free</label></td>
+        <td class="borderless"><input type="checkbox" #No_oil_added [(ngModel)]="product.no_oil_added" name="Product.No_oil_added" class="text-input" id="Product.No_oil_added" /><label>No_oil_added</label></td>
+        <td class="borderless"><input type="checkbox" #Low_sugar [(ngModel)]="product.low_sugar" name="Product.Low_sugar" class="text-input" id="Product.Low_sugar" /><label>Low_sugar</label></td>
+        <td class="borderless"><input type="checkbox" #Paleo [(ngModel)]="product.paleo" name="Product.Paleo" class="text-input" id="Product.Paleo" /><label>Paleo</label></td>
+      </tr>
+      <tr  class="borderless">
+        <td class="borderless"><input type="checkbox" #Peanut_free [(ngModel)]="product.peanut_free" name="Product.Peanut_free" class="text-input" id="Product.Peanut_free" /><label>Peanut_free</label></td>
+        <td class="borderless"><input type="checkbox" #Pecatarian [(ngModel)]="product.pecatarian" name="Product.Pecatarian" class="text-input" id="Product.Pecatarian" /><label>Pecatarian</label></td>
+        <td class="borderless"><input type="checkbox" #Pork_free [(ngModel)]="product.pork_free" name="Product.Pork_free" class="text-input" id="Product.Pork_free" /><label>Pork_free</label></td>
+        <td class="borderless"><input type="checkbox" #Red_meat_free [(ngModel)]="product.red_meat_free" name="Product.Red_meat_free" class="text-input" id="Product.Red_meat_free" /><label class="text-danger">Red_meat_free</label></td>
+      </tr>
+      <tr  class="borderless">
+        <td class="borderless"><input type="checkbox" #Sesame_free [(ngModel)]="product.sesame_free" name="Product.Sesame_free" class="text-input" id="Product.Sesame_free" /><label>Sesame_free</label></td>
+        <td class="borderless"><input type="checkbox" #Shellfish_free [(ngModel)]="product.shellfish_free" name="Product.Shellfish_free" class="text-input" id="Product.Shellfish_free" /><label class="text-danger">Shellfish_free</label></td>
+        <td class="borderless"><input type="checkbox" #Soy_free [(ngModel)]="product.soy_free" name="Product.Soy_free" class="text-input" id="Product.Soy_free" /><label>Soy_free</label></td>
+        <td class="borderless"><input type="checkbox" #Sugar_conscious [(ngModel)]="product.sugar_conscious" name="Product.Sugar_conscious" class="text-input" id="Product.Sugar_conscious" /><label>Sugar_conscious</label></td>
+      </tr>
+      <tr  class="borderless">
+        <td class="borderless"><input type="checkbox" #Tree_nut_free [(ngModel)]="product.tree_nut_free" name="Product.Tree_nut_free" class="text-input" id="Product.Tree_nut_free" /><label>Tree_nut_free</label></td>
+        <td class="borderless"><input type="checkbox" #Vegan [(ngModel)]="product.vegan" name="Product.Vegan" class="text-input" id="Product.Vegan" /><label>Vegan</label></td>
+        <td class="borderless"><input type="checkbox" #Vegetarian [(ngModel)]="product.vegetarian" name="Product.Vegetarian" class="text-input" id="Product.Vegetarian" /><label>Vegetarian</label></td>
+        <td class="borderless"><input type="checkbox" #Wheat_free [(ngModel)]="product.wheat_free" name="Product.Wheat_free" class="text-input" id="Product.Wheat_free" /><label>Wheat_free</label></td>
+      </tr>
+      <tr  class="borderless">
+        <td class="borderless">
+          <button name="ID"
+                  (click)="senddata( naam.value, imgurl.value, Alcohol_free.checked,Celery_free.checked,
+                    Crustacean_free.checked, Dairy_free.checked, Egg_free.checked, Fish_free.checked, Gluten_free.checked,
+                    Kidney_friendly.checked, Kosher.checked, Low_potassium.checked, Lupine_free.checked, Low_fat_abs.checked,
+                    Mustard_free.checked, No_oil_added.checked, Low_sugar.checked, Paleo.checked, Peanut_free.checked, Pecatarian.checked,
+                    Pork_free.checked, Red_meat_free.checked, Sesame_free.checked, Shellfish_free.checked, Soy_free.checked,
+                    Sugar_conscious.checked, Tree_nut_free.checked, Vegan.checked, Vegetarian.checked, Wheat_free.checked,product.id)"
+                  type="submit" class="btn btn-success form-control" id="ID">
+            Edit
+          </button>
+        </td>
+        <td class="borderless"><button type="submit" class="btn btn-primary" (click)="deleteprod(product.id)" name="delete">Delete</button></td>
+      </tr>
+      <tr class="borderless">
+        <td class="borderless" colspan="4"></td>
+      </tr>
+      <tr class="seperate_border">
+        <td class="seperate_border" colspan="4"></td>
+      </tr>
+    </ng-container>
+    <tr class="borderless">
+      <td class="borderless">
+        <button *ngIf="!visual" class="btn btn-primary" (click)="visualizer()">voeg producten toe </button>
+      </td>
+    </tr>
+    <tr class="borderless">
+      <td class="borderless">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="visual">
+  <h3>add product</h3>
+  <div class="row">
+    <div class="col-sm-4"><input #naam type="text" name="Product.Name" class="form-control text-input required" id="Name" placeholder="Name" /></div>
+    <div class="col-sm-8"><input #imgurl type="text" name="Product.ImageUrl" class="form-control text-input" id="ImageUrl" placeholder="ImageUrl" /></div>
+  </div>
+  <br />
+  <div class="row">
+  </div>
+  <div>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Alcohol_free" name="Product.Alcohol_free" class="text-input" id="Product.Alcohol_free" /><label class="text-danger">Alcohol free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Celery_free" name="Product.Celery_free" class="text-input" id="Product.Celery_free" /><label>Celery free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Crustacean_free" name="Product.Crustacean_free" class="text-input" id="Product.Crustacean_free" /><label class="text-danger">Crustacean free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Dairy_free" name="Product.Dairy_free" class="text-input" id="Product.Dairy_free" /><label class="text-warning">Dairy free</label></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Egg_free" name="Product.Egg_free" class="text-input" id="Product.Egg_free" /><label class="text-danger">Egg free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Fish_free" name="Product.Fish_free" class="text-input" id="Product.Fish_free" /><label class="text-warning">Fish free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Gluten_free" name="Product.Gluten_free" class="text-input" id="Product.Gluten_free" /><label>Gluten free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Kidney_friendly" name="Product.Kidney_friendly" class="text-input" id="Product.Kidney_friendly" /><label>Kidney friendly</label></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Kosher" name="Product.Kosher" class="text-input" id="Product.Kosher" /><label>Kosher</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Low_potassium" name="Product.Low_potassium" class="text-input" id="Product.Low_potassium" /><label>Low potassium</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Lupine_free" name="Product.Lupine_free" class="text-input" id="Product.Lupine_free" /><label>Lupine free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Low_fat_abs" name="Product.Low_fat_abs" class="text-input" id="Product.Low_fat_abs" /><label>Low fat abs</label></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Mustard_free" name="Product.Mustard_free" class="text-input" id="Product.Mustard_free" /><label>Mustard free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.No_oil_added" name="Product.No_oil_added" class="text-input" id="Product.No_oil_added" /><label>No oil added</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Low_sugar" name="Product.Low_sugar" class="text-input" id="Product.Low_sugar" /><label>Low sugar</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Paleo" name="Product.Paleo" class="text-input" id="Product.Paleo" /><label>Paleo</label></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Peanut_free" name="Product.Peanut_free" class="text-input" id="Product.Peanut_free" /><label>Peanut free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Pecatarian" name="Product.Pecatarian" class="text-input" id="Product.Pecatarian" /><label>Pecatarian</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Pork_free" name="Product.Pork_free" class="text-input" id="Product.Pork_free" /><label>Pork free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Red_meat_free" name="Product.Red_meat_free" class="text-input" id="Product.Red_meat_free" /><label class="text-danger">Red meat free</label></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Sesame_free" name="Product.Sesame_free" class="text-input" id="Product.Sesame_free" /><label>Sesame free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Shellfish_free" name="Product.Shellfish_free" class="text-input" id="Product.Shellfish_free" /><label class="text-danger">Shellfish free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Soy_free" name="Product.Soy_free" class="text-input" id="Product.Soy_free" /><label>Soy free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Sugar_conscious" name="Product.Sugar_conscious" class="text-input" id="Product.Sugar_conscious" /><label> Sugar conscious</label></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Tree_nut_free" name="Product.Tree_nut_free" class="text-input" id="Product.Tree_nut_free" /><label>Tree nut free</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Vegan" name="Product.Vegan" class="text-input" id="Product.Vegan" /><label>Vegan</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Vegetarian" name="Product.Vegetarian" class="text-input" id="Product.Vegetarian" /><label>Vegetarian</label></div>
+        <div class="col-sm-3"><input type="checkbox" [(ngModel)]="Product.Wheat_free" name="Product.Wheat_free" class="text-input" id="Product.Wheat_free" /><label>Wheat_free</label></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div *ngIf="visual" class="col-sm-2"><button (click)="addproductbutton( naam.value,imgurl.value)" type="submit" class="btn btn-success form-control">voeg toe</button></div>
+    <button *ngIf="visual" class="col-sm-2 btn btn-primary" (click)="visualizer()">bekijk producten </button>
+  </div>
+</div>
+

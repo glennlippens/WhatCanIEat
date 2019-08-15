@@ -1,0 +1,9 @@
+.panel{
+  border-width: 3px;
+}
+
+#show_ingredient_button{
+  border: 1px solid;
+  color: forestgreen;
+  max-width:200px;
+}

@@ -1,0 +1,33 @@
+
+<h3>Edaman</h3>
+<div class="row">
+  <div class="col-sm-9">
+    <input (keyup.enter)="searchRecipe()" id="search" type="text" class="form-control" value="">
+  </div>
+  <div class="col-sm-3">
+    <button (click)="getProduct()" class="btn btn-default form-control">search</button>
+    <button (click)="checker()" >check</button>
+  </div>
+</div>
+
+<div style="display:none" id="recipelist">
+  <div>
+    <br>
+    <p class="text-lowercase">Name: {{name}}</p>
+    <p>healthLables: {{healthLables}}</p>
+    <p>ingredients: {{ingredients}}</p><br>
+    <img [src]="img" class="img-rounded" /><br>
+  </div>
+  <br>
+  <footer>powered by edaman API: https://www.edamam.com/ </footer>
+  <br>
+</div>
+
+<tr *ngIf="!healthLables">
+  <td colspan="5">
+    gelieven recept in te geven
+  </td>
+</tr>
+
+
+

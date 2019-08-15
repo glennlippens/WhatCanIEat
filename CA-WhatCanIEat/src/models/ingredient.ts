@@ -1,0 +1,4 @@
+class ingredient {
+    naam: string
+
+    }
